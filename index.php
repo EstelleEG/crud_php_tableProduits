@@ -2,11 +2,11 @@
 //we start a session
 session_start();
 
-echo "hey";
+//echo "hey";
 //CRUD stands for : 
 
 //CREATE (add.php)
-//READ (details.php) to read all the datas of the db, read et write datas that we need in db, voir/read les details of all or one produit.
+//READ (details.php) to read all the datas of the db, read et write datas that we need in db, voir/read les details of all or one product.
 //UPDATE (edit.php)
 //DELETE (delete.php)
 
@@ -43,7 +43,7 @@ require_once('close.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>crud_php_products</title>
 <!-- add bootstrap cdn for the css style -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -67,32 +67,32 @@ require_once('close.php');
 
             ?>
 
-            <h1>Liste des produits</h1>
+            <h1>Products listing</h1>
             <table class="table">
                 <thead>
                     <th>ID</th>
-                    <th>Produit</th>
-                    <th>Prix</th>
-                    <th>Nombre</th>
+                    <th>Product</th>
+                    <th>price</th>
+                    <th>Number</th>
                     <th>Actions</th>
                 </thead>
 
                 <tbody>
                     <?php
-                    foreach($result as $produit){ //I loop on the var $result, to display the table liste, each line is a produit
+                    foreach($result as $product){ //I loop on the var $result, to display the table liste, each line is a product
                     ?>
                     <!-- type 'tr>td*5' -->
                       <tr>
                           <!--  equals to php echo -->
-                          <td><?= $produit['id'] ?></td>
-                          <td><?= $produit['produit'] ?></td>
-                          <td><?= $produit['prix'] ?></td>
-                          <td><?= $produit['nombre'] ?></td>
+                          <td><?= $product['id'] ?></td>
+                          <td><?= $product['product'] ?></td>
+                          <td><?= $product['price'] ?></td>
+                          <td><?= $product['number'] ?></td>
 
-                          <!-- to display the produit via its id -->
-                          <td><a href="details.php?id=<?= $produit['id'] ?>">Voir</a>
-                          <a href="edit.php?id=<?= $produit['id'] ?>">Modifier</a>
-                          <a href="delete.php?id=<?= $produit['id'] ?>">Supprimer</a></td>
+                          <!-- to display the product via its id -->
+                          <td><a href="details.php?id=<?= $product['id'] ?>">See</a>
+                          <a href="edit.php?id=<?= $product['id'] ?>">Modify</a>
+                          <a href="delete.php?id=<?= $product['id'] ?>">Delete</a></td>
                       </tr>
 
                     <?php
@@ -101,7 +101,7 @@ require_once('close.php');
                 </tbody>
             </table>
             <!-- btn add a poduit -->
-            <a href="add.php" class='btn btn-primary'>Ajouter un produit</a>
+            <a href="add.php" class='btn btn-primary'>Add a product</a>
         </section>
     </div>
     </main>
